@@ -1,0 +1,326 @@
+package deeply.nested {
+  object Examples extends Object {
+    private[this] val topology: deeply.nested.Examples$Topology = _;
+    <stable> <accessor> def topology(): deeply.nested.Examples$Topology = Examples.this.topology;
+    private[this] val versionLens: shapeless.Lens = _;
+    <stable> <accessor> def versionLens(): shapeless.Lens = Examples.this.versionLens;
+    final <artifact> private[this] def $anonfun$new$1(x$1: String): String = x$1.+("-SNAPSHOT");
+    def <init>(): deeply.nested.Examples.type = {
+      Examples.super.<init>();
+      Examples.this.topology = new deeply.nested.Examples$Topology(new deeply.nested.Examples$Elasticsearch("5.4.6"), scala.collection.Seq.empty().$asInstanceOf[Seq]());
+      Examples.this.versionLens = shapeless.`package`.lens().apply().selectDynamic("elasticsearch", shapeless.this.MkSelectDynamicOptic.mkSelField(shapeless.this.MkFieldLens.mkFieldLens(shapeless.this.MkLabelledGenericLens.mkLabelledGenericLens(shapeless.this.LabelledGeneric.materializeProduct(({
+  new <$anon: shapeless.DefaultSymbolicLabelling>()
+}: shapeless.DefaultSymbolicLabelling), {
+  (new <$anon: shapeless.Generic>(): shapeless.Generic)
+}, shapeless.ops.hlist$ZipWithKeys.hconsZipWithKeys(shapeless.ops.hlist$ZipWithKeys.hconsZipWithKeys(shapeless.ops.hlist$ZipWithKeys.hnilZipWithKeys(), shapeless.Witness.mkWitness((<apply-dynamic>(apply#apply, (bootstrap, "elements")): Symbol))), shapeless.Witness.mkWitness((<apply-dynamic>(apply#apply, (bootstrap, "elasticsearch")): Symbol))), scala.Predef.$conforms())), shapeless.this.MkRecordSelectLens.mkRecordSelectLens(new shapeless.ops.record.UnsafeSelector(0), new shapeless.ops.record.UnsafeUpdater(0))), shapeless.this.OpticComposer.composeLL())).$asInstanceOf[shapeless.Lens]().selectDynamic("version", shapeless.this.MkSelectDynamicOptic.mkSelField(shapeless.this.MkFieldLens.mkFieldLens(shapeless.this.MkLabelledGenericLens.mkLabelledGenericLens(shapeless.this.LabelledGeneric.materializeProduct(({
+  new <$anon: shapeless.DefaultSymbolicLabelling>()
+}: shapeless.DefaultSymbolicLabelling), {
+  (new <$anon: shapeless.Generic>(): shapeless.Generic)
+}, shapeless.ops.hlist$ZipWithKeys.hconsZipWithKeys(shapeless.ops.hlist$ZipWithKeys.hnilZipWithKeys(), shapeless.Witness.mkWitness((<apply-dynamic>(apply#apply, (bootstrap, "version")): Symbol))), scala.Predef.$conforms())), shapeless.this.MkRecordSelectLens.mkRecordSelectLens(new shapeless.ops.record.UnsafeSelector(0), new shapeless.ops.record.UnsafeUpdater(0))), shapeless.this.OpticComposer.composeLL())).$asInstanceOf[shapeless.Lens]();
+      Examples.this.topology().copy(Examples.this.topology().elasticsearch().copy("7.0.0"), Examples.this.topology().copy$default$2());
+      Examples.this.versionLens().set(Examples.this.topology(), "7.0.0");
+      Examples.this.versionLens().modify(Examples.this.topology(), {
+        ((x$1: String) => Examples.this.$anonfun$new$1(x$1))
+      });
+      Examples.this.versionLens().get(Examples.this.topology());
+      ()
+    }
+  };
+  case class Examples$Element extends Object with Product with Serializable {
+    <caseaccessor> <paramaccessor> private[this] val name: String = _;
+    <stable> <caseaccessor> <accessor> <paramaccessor> def name(): String = Examples$Element.this.name;
+    <synthetic> def copy(name: String): deeply.nested.Examples$Element = new deeply.nested.Examples$Element(name);
+    <synthetic> def copy$default$1(): String = Examples$Element.this.name();
+    override <synthetic> def productPrefix(): String = "Element";
+    <synthetic> def productArity(): Int = 1;
+    <synthetic> def productElement(x$1: Int): Object = {
+      case <synthetic> val x1: Int = x$1;
+      (x1: Int) match {
+        case 0 => Examples$Element.this.name()
+        case _ => throw new IndexOutOfBoundsException(scala.Int.box(x$1).toString())
+      }
+    };
+    override <synthetic> def productIterator(): Iterator = scala.runtime.ScalaRunTime.typedProductIterator(Examples$Element.this);
+    <synthetic> def canEqual(x$1: Object): Boolean = x$1.$isInstanceOf[deeply.nested.Examples$Element]();
+    override <synthetic> def hashCode(): Int = scala.runtime.ScalaRunTime._hashCode(Examples$Element.this);
+    override <synthetic> def toString(): String = scala.runtime.ScalaRunTime._toString(Examples$Element.this);
+    override <synthetic> def equals(x$1: Object): Boolean = Examples$Element.this.eq(x$1).||({
+  case <synthetic> val x1: Object = x$1;
+  case5(){
+    if (x1.$isInstanceOf[deeply.nested.Examples$Element]())
+      matchEnd4(true)
+    else
+      case6()
+  };
+  case6(){
+    matchEnd4(false)
+  };
+  matchEnd4(x: Boolean){
+    x
+  }
+}.&&({
+      <synthetic> val Element$1: deeply.nested.Examples$Element = x$1.$asInstanceOf[deeply.nested.Examples$Element]();
+      Examples$Element.this.name().==(Element$1.name()).&&(Element$1.canEqual(Examples$Element.this))
+    }));
+    def <init>(name: String): deeply.nested.Examples$Element = {
+      Examples$Element.this.name = name;
+      Examples$Element.super.<init>();
+      Examples$Element.super./*Product*/$init$();
+      ()
+    }
+  };
+  <synthetic> object Examples$Element extends scala.runtime.AbstractFunction1 with Serializable {
+    final override <synthetic> def toString(): String = "Element";
+    case <synthetic> def apply(name: String): deeply.nested.Examples$Element = new deeply.nested.Examples$Element(name);
+    case <synthetic> def unapply(x$0: deeply.nested.Examples$Element): Option = if (x$0.==(null))
+      scala.None
+    else
+      new Some(x$0.name());
+    <synthetic> private def readResolve(): Object = deeply.nested.Examples$Element;
+    case <synthetic> <bridge> <artifact> def apply(v1: Object): Object = Examples$Element.this.apply(v1.$asInstanceOf[String]());
+    def <init>(): deeply.nested.Examples$Element.type = {
+      Examples$Element.super.<init>();
+      ()
+    }
+  };
+  case class Examples$Elasticsearch extends Object with Product with Serializable {
+    <caseaccessor> <paramaccessor> private[this] val version: String = _;
+    <stable> <caseaccessor> <accessor> <paramaccessor> def version(): String = Examples$Elasticsearch.this.version;
+    <synthetic> def copy(version: String): deeply.nested.Examples$Elasticsearch = new deeply.nested.Examples$Elasticsearch(version);
+    <synthetic> def copy$default$1(): String = Examples$Elasticsearch.this.version();
+    override <synthetic> def productPrefix(): String = "Elasticsearch";
+    <synthetic> def productArity(): Int = 1;
+    <synthetic> def productElement(x$1: Int): Object = {
+      case <synthetic> val x1: Int = x$1;
+      (x1: Int) match {
+        case 0 => Examples$Elasticsearch.this.version()
+        case _ => throw new IndexOutOfBoundsException(scala.Int.box(x$1).toString())
+      }
+    };
+    override <synthetic> def productIterator(): Iterator = scala.runtime.ScalaRunTime.typedProductIterator(Examples$Elasticsearch.this);
+    <synthetic> def canEqual(x$1: Object): Boolean = x$1.$isInstanceOf[deeply.nested.Examples$Elasticsearch]();
+    override <synthetic> def hashCode(): Int = scala.runtime.ScalaRunTime._hashCode(Examples$Elasticsearch.this);
+    override <synthetic> def toString(): String = scala.runtime.ScalaRunTime._toString(Examples$Elasticsearch.this);
+    override <synthetic> def equals(x$1: Object): Boolean = Examples$Elasticsearch.this.eq(x$1).||({
+  case <synthetic> val x1: Object = x$1;
+  case5(){
+    if (x1.$isInstanceOf[deeply.nested.Examples$Elasticsearch]())
+      matchEnd4(true)
+    else
+      case6()
+  };
+  case6(){
+    matchEnd4(false)
+  };
+  matchEnd4(x: Boolean){
+    x
+  }
+}.&&({
+      <synthetic> val Elasticsearch$1: deeply.nested.Examples$Elasticsearch = x$1.$asInstanceOf[deeply.nested.Examples$Elasticsearch]();
+      Examples$Elasticsearch.this.version().==(Elasticsearch$1.version()).&&(Elasticsearch$1.canEqual(Examples$Elasticsearch.this))
+    }));
+    def <init>(version: String): deeply.nested.Examples$Elasticsearch = {
+      Examples$Elasticsearch.this.version = version;
+      Examples$Elasticsearch.super.<init>();
+      Examples$Elasticsearch.super./*Product*/$init$();
+      ()
+    }
+  };
+  <synthetic> object Examples$Elasticsearch extends scala.runtime.AbstractFunction1 with Serializable {
+    final override <synthetic> def toString(): String = "Elasticsearch";
+    case <synthetic> def apply(version: String): deeply.nested.Examples$Elasticsearch = new deeply.nested.Examples$Elasticsearch(version);
+    case <synthetic> def unapply(x$0: deeply.nested.Examples$Elasticsearch): Option = if (x$0.==(null))
+      scala.None
+    else
+      new Some(x$0.version());
+    <synthetic> private def readResolve(): Object = deeply.nested.Examples$Elasticsearch;
+    case <synthetic> <bridge> <artifact> def apply(v1: Object): Object = Examples$Elasticsearch.this.apply(v1.$asInstanceOf[String]());
+    def <init>(): deeply.nested.Examples$Elasticsearch.type = {
+      Examples$Elasticsearch.super.<init>();
+      ()
+    }
+  };
+  case class Examples$Topology extends Object with Product with Serializable {
+    <caseaccessor> <paramaccessor> private[this] val elasticsearch: deeply.nested.Examples$Elasticsearch = _;
+    <stable> <caseaccessor> <accessor> <paramaccessor> def elasticsearch(): deeply.nested.Examples$Elasticsearch = Examples$Topology.this.elasticsearch;
+    <caseaccessor> <paramaccessor> private[this] val elements: Seq = _;
+    <stable> <caseaccessor> <accessor> <paramaccessor> def elements(): Seq = Examples$Topology.this.elements;
+    <synthetic> def copy(elasticsearch: deeply.nested.Examples$Elasticsearch, elements: Seq): deeply.nested.Examples$Topology = new deeply.nested.Examples$Topology(elasticsearch, elements);
+    <synthetic> def copy$default$1(): deeply.nested.Examples$Elasticsearch = Examples$Topology.this.elasticsearch();
+    <synthetic> def copy$default$2(): Seq = Examples$Topology.this.elements();
+    override <synthetic> def productPrefix(): String = "Topology";
+    <synthetic> def productArity(): Int = 2;
+    <synthetic> def productElement(x$1: Int): Object = {
+      case <synthetic> val x1: Int = x$1;
+      (x1: Int) match {
+        case 0 => Examples$Topology.this.elasticsearch()
+        case 1 => Examples$Topology.this.elements()
+        case _ => throw new IndexOutOfBoundsException(scala.Int.box(x$1).toString())
+      }
+    };
+    override <synthetic> def productIterator(): Iterator = scala.runtime.ScalaRunTime.typedProductIterator(Examples$Topology.this);
+    <synthetic> def canEqual(x$1: Object): Boolean = x$1.$isInstanceOf[deeply.nested.Examples$Topology]();
+    override <synthetic> def hashCode(): Int = scala.runtime.ScalaRunTime._hashCode(Examples$Topology.this);
+    override <synthetic> def toString(): String = scala.runtime.ScalaRunTime._toString(Examples$Topology.this);
+    override <synthetic> def equals(x$1: Object): Boolean = Examples$Topology.this.eq(x$1).||({
+  case <synthetic> val x1: Object = x$1;
+  case5(){
+    if (x1.$isInstanceOf[deeply.nested.Examples$Topology]())
+      matchEnd4(true)
+    else
+      case6()
+  };
+  case6(){
+    matchEnd4(false)
+  };
+  matchEnd4(x: Boolean){
+    x
+  }
+}.&&({
+      <synthetic> val Topology$1: deeply.nested.Examples$Topology = x$1.$asInstanceOf[deeply.nested.Examples$Topology]();
+      Examples$Topology.this.elasticsearch().==(Topology$1.elasticsearch()).&&(Examples$Topology.this.elements().==(Topology$1.elements())).&&(Topology$1.canEqual(Examples$Topology.this))
+    }));
+    def <init>(elasticsearch: deeply.nested.Examples$Elasticsearch, elements: Seq): deeply.nested.Examples$Topology = {
+      Examples$Topology.this.elasticsearch = elasticsearch;
+      Examples$Topology.this.elements = elements;
+      Examples$Topology.super.<init>();
+      Examples$Topology.super./*Product*/$init$();
+      ()
+    }
+  };
+  <synthetic> object Examples$Topology extends scala.runtime.AbstractFunction2 with Serializable {
+    final override <synthetic> def toString(): String = "Topology";
+    case <synthetic> def apply(elasticsearch: deeply.nested.Examples$Elasticsearch, elements: Seq): deeply.nested.Examples$Topology = new deeply.nested.Examples$Topology(elasticsearch, elements);
+    case <synthetic> def unapply(x$0: deeply.nested.Examples$Topology): Option = if (x$0.==(null))
+      scala.None
+    else
+      new Some(new Tuple2(x$0.elasticsearch(), x$0.elements()));
+    <synthetic> private def readResolve(): Object = deeply.nested.Examples$Topology;
+    case <synthetic> <bridge> <artifact> def apply(v1: Object, v2: Object): Object = Examples$Topology.this.apply(v1.$asInstanceOf[deeply.nested.Examples$Elasticsearch](), v2.$asInstanceOf[Seq]());
+    def <init>(): deeply.nested.Examples$Topology.type = {
+      Examples$Topology.super.<init>();
+      ()
+    }
+  };
+  final class anon$1 extends Object with shapeless.DefaultSymbolicLabelling {
+    def apply(): shapeless.:: = new shapeless.::(<apply-dynamic>(apply#apply, (bootstrap, "elasticsearch")), new shapeless.::(<apply-dynamic>(apply#apply, (bootstrap, "elements")), shapeless.HNil));
+    <bridge> <artifact> def apply(): Object = anon$1.this.apply();
+    def <init>(): <$anon: shapeless.DefaultSymbolicLabelling> = {
+      anon$1.super.<init>();
+      ()
+    }
+  };
+  final class Examples$anon$macro$6$1 extends Object with shapeless.Generic {
+    def to(p: deeply.nested.Examples$Topology): shapeless.:: = ({
+      case <synthetic> val x1: deeply.nested.Examples$Topology = p;
+      case4(){
+        if (x1.ne(null))
+          {
+            val pat$macro$4: deeply.nested.Examples$Elasticsearch = x1.elasticsearch();
+            val pat$macro$5: Seq = x1.elements();
+            matchEnd3(new shapeless.::(pat$macro$4, new shapeless.::(pat$macro$5, shapeless.HNil)))
+          }
+        else
+          case5()
+      };
+      case5(){
+        matchEnd3(throw new MatchError(x1))
+      };
+      matchEnd3(x: shapeless.::){
+        x
+      }
+    }: shapeless.::);
+    def from(p: shapeless.::): deeply.nested.Examples$Topology = {
+      case <synthetic> val x1: shapeless.:: = p;
+      case7(){
+        if (x1.ne(null))
+          {
+            val pat$macro$4: deeply.nested.Examples$Elasticsearch = x1.head().$asInstanceOf[deeply.nested.Examples$Elasticsearch]();
+            <synthetic> val p2: shapeless.:: = x1.tail().$asInstanceOf[shapeless.::]();
+            if (p2.ne(null))
+              {
+                val pat$macro$5: Seq = p2.head().$asInstanceOf[Seq]();
+                <synthetic> val p3: shapeless.HNil = p2.tail().$asInstanceOf[shapeless.HNil]();
+                if (shapeless.HNil.==(p3))
+                  matchEnd6(new deeply.nested.Examples$Topology(pat$macro$4, pat$macro$5))
+                else
+                  case8()
+              }
+            else
+              case8()
+          }
+        else
+          case8()
+      };
+      case8(){
+        matchEnd6(throw new MatchError(x1))
+      };
+      matchEnd6(x: deeply.nested.Examples$Topology){
+        x
+      }
+    };
+    <bridge> <artifact> def from(r: Object): Object = Examples$anon$macro$6$1.this.from(r.$asInstanceOf[shapeless.::]());
+    <bridge> <artifact> def to(t: Object): Object = Examples$anon$macro$6$1.this.to(t.$asInstanceOf[deeply.nested.Examples$Topology]());
+    def <init>(): <$anon: shapeless.Generic> = {
+      Examples$anon$macro$6$1.super.<init>();
+      ()
+    }
+  };
+  final class anon$2 extends Object with shapeless.DefaultSymbolicLabelling {
+    def apply(): shapeless.:: = new shapeless.::(<apply-dynamic>(apply#apply, (bootstrap, "version")), shapeless.HNil);
+    <bridge> <artifact> def apply(): Object = anon$2.this.apply();
+    def <init>(): <$anon: shapeless.DefaultSymbolicLabelling> = {
+      anon$2.super.<init>();
+      ()
+    }
+  };
+  final class Examples$anon$macro$8$1 extends Object with shapeless.Generic {
+    def to(p: deeply.nested.Examples$Elasticsearch): shapeless.:: = ({
+      case <synthetic> val x1: deeply.nested.Examples$Elasticsearch = p;
+      case4(){
+        if (x1.ne(null))
+          {
+            val pat$macro$7: String = x1.version();
+            matchEnd3(new shapeless.::(pat$macro$7, shapeless.HNil))
+          }
+        else
+          case5()
+      };
+      case5(){
+        matchEnd3(throw new MatchError(x1))
+      };
+      matchEnd3(x: shapeless.::){
+        x
+      }
+    }: shapeless.::);
+    def from(p: shapeless.::): deeply.nested.Examples$Elasticsearch = {
+      case <synthetic> val x1: shapeless.:: = p;
+      case6(){
+        if (x1.ne(null))
+          {
+            val pat$macro$7: String = x1.head().$asInstanceOf[String]();
+            <synthetic> val p2: shapeless.HNil = x1.tail().$asInstanceOf[shapeless.HNil]();
+            if (shapeless.HNil.==(p2))
+              matchEnd5(new deeply.nested.Examples$Elasticsearch(pat$macro$7))
+            else
+              case7()
+          }
+        else
+          case7()
+      };
+      case7(){
+        matchEnd5(throw new MatchError(x1))
+      };
+      matchEnd5(x: deeply.nested.Examples$Elasticsearch){
+        x
+      }
+    };
+    <bridge> <artifact> def from(r: Object): Object = Examples$anon$macro$8$1.this.from(r.$asInstanceOf[shapeless.::]());
+    <bridge> <artifact> def to(t: Object): Object = Examples$anon$macro$8$1.this.to(t.$asInstanceOf[deeply.nested.Examples$Elasticsearch]());
+    def <init>(): <$anon: shapeless.Generic> = {
+      Examples$anon$macro$8$1.super.<init>();
+      ()
+    }
+  }
+}
+
